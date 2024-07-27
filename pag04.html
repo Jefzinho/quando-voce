@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Quando Estiver Feliz</title>
+    <style>
+        .flutuante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #c70039;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: flutuar 2s ease-in-out infinite;
+        }
+
+        .flutuante:hover {
+            background-color: #ff4d6d;
+        }
+
+        @keyframes flutuar {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #c70039;
+        }
+        .poema {
+            margin-top: 20px;
+            font-size: 1.2em;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        .coracoes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .coracoes img {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            opacity: 0.5;
+        }
+        .botoes {
+            margin-top: 20px;
+        }
+        .botoes button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #c70039;
+            color: white;
+            cursor: pointer;
+        }
+        .botoes button:hover {
+            background-color: #ff4d6d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Para Quando Estiver Feliz</h1>
+    <div class="poema">
+        <p> amo sua energia, quando está feliz voce brilha como o sol, amo isso<br>
+            amo voce falando e faalando e falando, as vezes me perco sim, mas eu gosto muito disso,<br>
+            acho que meu maior objetivo é te fazer feliz para o resto da vida toda.<br>
+            Quando a felicidade iluminar seu dia,<br>
+            Dance como se ninguém estivesse vendo.<br>
+            Deixe o sorriso brilhar, sem nenhuma timidez,<br>
+            Pois a alegria é um presente que merece ser celebrado.
+        </p>
+        <p>
+            Aproveite cada momento, cada riso, cada abraço,<br>
+            E compartilhe essa felicidade com quem você ama.<br>
+            A vida é feita desses momentos preciosos,<br>
+            E você merece desfrutar cada um deles.
+        </p>
+    </div>
+    <div class="coracoes">
+        <img src="https://static.vecteezy.com/system/resources/previews/001/187/438/non_2x/heart-png.png" style="top: 10%; left: 10%;" alt="Coração">
+        <img src="https://static.vecteezy.com/system/resources/previews/001/187/438/non_2x/heart-png.png" style="top: 20%; left: 50%;" alt="Coração">
+        <img src="https://static.vecteezy.com/system/resources/previews/001/187/438/non_2x/heart-png.png" style="top: 50%; left: 20%;" alt="Coração">
+        <img src="https://static.vecteezy.com/system/resources/previews/001/187/438/non_2x/heart-png.png" style="top: 70%; left: 70%;" alt="Coração">
+        <img src="https://static.vecteezy.com/system/resources/previews/001/187/438/non_2x/heart-png.png" style="top: 80%; left: 30%;" alt="Coração">
+    </div>
+    
+    <button class="flutuante" onclick="showHearts()">Casa Comigo</button>
+<div id="hearts-container"></div>
+
+<script>
+    function changeText(button) {
+        button.textContent = 'Você aceitou! 💖';
+        button.style.backgroundColor = '#4CAF50'; }
+    function showHearts() {
+        const container = document.getElementById('hearts-container');
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.textContent = '❤️';
+            heart.style.position = 'absolute';
+            heart.style.fontSize = '24px';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.top = `${Math.random() * 100}%`;
+            heart.style.opacity = '0.8';
+            heart.style.transition = 'transform 1s';
+            heart.style.transform = `translateY(${Math.random() * 100}vh)`;
+            container.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        }
+    }
+</script>
+</body>
+</html>
